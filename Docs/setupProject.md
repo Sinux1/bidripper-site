@@ -68,11 +68,5 @@ There will be some warnings, run `nmp audit fix` to take care of the ones that a
 
 `npm add -g aws-amplify @aws-amplify/ui-react @aws-amplify/cli`
 
-## Pull Amplify project
-
-In the root of the project run
-`amplify pull --app-id d2r1u95d0vq2j`
-
-If you have configured your default aws profile correctly from the steps at the beginning of this document, when prompted select *_AWS profile_* for the authentication method, then select the *_default_* user profile. You can use the default settings for the majority of the remaining setup, but be sure to select vscode as your editor if thats what you use.
 
 
