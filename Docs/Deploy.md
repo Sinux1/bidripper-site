@@ -47,28 +47,10 @@ Sanity Check
 Install and set latest versions of node and npm  
 
 ```bash
-nvm install --lts
-nvm alias default lts/fermium
+nvm install v16.13.0
+nvm alias default v16.13.0
+
 ```
 `node -v` and `npm -v` should both return version numbers.
-
-## Clone repo
-
-You should already have access by way of ssh key
-
-`git clone git@bitbucket.org:smazarei/capstone.git`
-
-### Install node_modules
-
-Since the repo gitignores node_modules, but tracks packages, to install the appropriate packages run  
-
-`npm install`
-
-There will be some warnings, run `nmp audit fix` to take care of the ones that aren't breaking.  
-
-### Install Amplify
-
-`npm add -g aws-amplify @aws-amplify/ui-react @aws-amplify/cli`
-
 
 
