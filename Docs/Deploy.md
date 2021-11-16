@@ -8,8 +8,7 @@ Some basics just in case (curl and git are the most important)
 
 ### Make sure AWS CLI v2 is installed
 
-Navigate to where you want to download the install package for aws cli v2 and run  
-
+Navigate to your home directory and install the AWS CLI
 ```bash
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
