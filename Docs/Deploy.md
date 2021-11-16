@@ -6,7 +6,7 @@ These instructions are for a linux environment, specifically for an Ubuntu 20.04
 
 Some basics just in case (curl and git are the most important)
 
-`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git python3-pip -y && pip3 install --user pipenv`  
+`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git python3-pip pipenv -y && pip3 install --user pipenv`  
 
 
 ## Make sure AWS CLI v2 is installed
