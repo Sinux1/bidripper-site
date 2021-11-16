@@ -1,0 +1,39 @@
+{
+    "paths": [
+        {
+            "name": "/bid",
+            "lambdaFunction": "bidrippergetbidfunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/GET"
+                ]
+            },
+            "policyResourceName": "/bid"
+        }
+    ],
+    "resourceName": "bidripperapi",
+    "apiName": "bidripperapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "bidrippergetbidfunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-bidripper-dev-123424-authRole",
+        "unAuthRoleName": "amplify-bidripper-dev-123424-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "bidrippergetbidfunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "5b1eb623"
+}

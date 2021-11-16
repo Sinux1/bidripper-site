@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* base styles */
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+
+.history .historyHeader h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.forecast-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.spot-bids {
+
+  max-width: 400px;
+
+  margin: 0 auto;
+
+  text-align: center;
+
+}
+
+.spot-bids label {
+
+  text-align: left;
+
+  display: block;
+
+}
+
+.spot-bids h2 {
+
+  font-size: 20px;
+
+  color: #f1356d;
+
+  margin-bottom: 30px;
+
+}
+
+.spot-bids input {
+
+  width: 100%;
+
+  padding: 6px 10px;
+
+  margin: 10px 0;
+
+  border: 1px solid #ddd;
+
+  box-sizing: border-box;
+
+  display: block;
+
+}
+
+.spot-bids button {
+
+  background: #f1356d;
+
+  color: #fff;
+
+  border: 0;
+
+  padding: 8px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+  
+  margin-bottom: 30px;
+
+}
+
+.spot-bids label {
+  font-size: 20px;
+
+  color: #f1356d;
+}
+
+.signout{
+  display: inline-block;
+  padding: 0px 0px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 1px;
+  text-decoration: none;
+  margin-left: 45%;
+  margin-right: 65%;
+  width:10%;
+}
