@@ -4,9 +4,9 @@
 
 Some basics just in case (curl and git are the most important)
 
-`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git -y`  
+`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git python3-pip -y`  
 
-### Make sure AWS CLI v2 is installed
+## Make sure AWS CLI v2 is installed
 
 Navigate to your home directory and install the AWS CLI
 ```bash
@@ -16,15 +16,15 @@ sudo ./aws/install
 source ~/.bashrc
 ```
 
-### Configure AWS profile
+## Configure AWS profile
 
 Have your (secret) access keys ready and then run 
 
 `aws configure`
 
-Follow the questions. When asked enter `us-west-2` for region, and `json` for the question about return data types. This will configure a *_default_* profile that will be used later when pulling the amplify project.
+Follow the questions. When asked enter `us-west-2` for region, and `json` for the question about return data types. This will configure a *_default_* profile that will be used later when pulling the amplify project.  
 
-### Now for nvm, npm, and node
+## Install nvm, npm, and node
 
 From whatever directory  you installed aws cli, run
 
@@ -44,13 +44,35 @@ export NVM_DIR="$HOME/.nvm"
 Sanity Check
 `nvm --version` should return a version number
 
-Install and set latest versions of node and npm  
+Set node and npm  
 
 ```bash
 nvm install v16.13.0
 nvm alias default v16.13.0
 
 ```
-`node -v` and `npm -v` should both return version numbers.
+`node -v` and `npm -v` should both return appropriate version numbers.
 
+## Installing AWS Amplify
 
+Create and navigate to the directory you want the bidripper-site loaded into.
+
+`mkdir bidripper && cd bidripper`
+
+Now install the Amplify CLI
+
+`npm install -g @aws-amplify/cli`
+
+## Initializing Bidripper From Git Repository
+
+`amplify init --app https://github.com/Sinux1/bidripper-site.git`  
+
+Amplify will clone into the Bidripper repository and initialize the project locally.  
+There will be a prompt:
+```
+? Select the authentication method you want to use: (Use arrow keys)
+❯ AWS profile 
+  AWS access keys 
+```
+
+When installing the AWS CLI above, a default profile was made. Select 'AWS Profile', then select 'Default'
