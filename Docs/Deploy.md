@@ -1,4 +1,4 @@
-# Setting up for developers
+# Setting up for Developers
 
 ## Required packages
 
@@ -29,7 +29,10 @@ Follow the questions. When asked enter `us-west-2` for region, and `json` for th
 
 From whatever directory  you installed aws cli, run
 
-`curl -sL https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh -o install_nvm.sh | bash install_nvm.sh`
+```bash
+curl -sL "https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh" -o install_nvm.sh
+bash install_nvm.sh
+```
 
 You can close and reopen your terminal like an amateur for this to take effect or run  
 
