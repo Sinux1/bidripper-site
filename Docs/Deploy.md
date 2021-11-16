@@ -1,10 +1,13 @@
 # Setting up for Developers
 
+These instructions are for a linux environment, specifically for an Ubuntu 20.04 fresh install.  
+
 ## Required packages
 
 Some basics just in case (curl and git are the most important)
 
-`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git python3-pip -y`  
+`sudo apt update -y && sudo apt upgrade -y && sudo apt autoremove && sudo apt install curl gcc make perl git python3-pip -y && pip3 install --user pipenv`  
+
 
 ## Make sure AWS CLI v2 is installed
 
@@ -18,7 +21,12 @@ source ~/.bashrc
 
 ## Configure AWS profile
 
-Have your (secret) access keys ready and then run 
+To deploy Bidripper you must have an AWS account, and it is highly recommended that you creater a user that is **not** the root user of the AWS account. Follow this link to create an AWS account. Once your account is created, create an admin user and save the account keys provided to you in a safe place because you will need them!
+
+[Create a free AWS account and Admin User](https://docs.aws.amazon.com/translate/latest/dg/setting-up.html)
+
+
+Once your AWS account is set up, get your (secret) access keys ready and then run in terminal
 
 `aws configure`
 
