@@ -93,7 +93,7 @@ When installing the AWS CLI above, a default profile was made. Select 'AWS Profi
 
 Amplify will then initialize, build, and deploy the project. Upon completion it will execute `npm start` to start the React site locally (localhost:3000). At this point, press `<ctrl-c>` to stop it. We need to define the forecast bucket in the bidrippergetbidfunction parameters.json file. 
 
-## Edit Fucntion Parameters
+## Edit Function Parameters
 
 Open __amplify/backend/function/bidrippergetbidfunction/parameters.json__.  
 There is a key value pare __"forecastbucket" : "somebuckethere"__. Replace __"somebuckethere"__ with the name of the foreacst bucket provided after deploying the bidripper-ml SAM application. If you have not built and deployed the bidripper-ml application, please stop and follow the instructions found [here](https://github.com/Sinux1/bidripper-ml).
