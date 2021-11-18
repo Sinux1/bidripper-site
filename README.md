@@ -1,6 +1,12 @@
-# Setting up for Developers
+# Bidripper Project : bidripper-site
 
-These instructions are for a linux environment, specifically for an Ubuntu 20.04 fresh install.  
+## About
+
+Description and Motivation will go here
+
+## Build and Deploy 
+
+These instructions are for a Linux environment, tested on an Ubuntu 20.04 fresh install.  
 
 ## Required packages
 
