@@ -15,19 +15,23 @@ app = Flask(__name__)
 CORS(app)
 
 def get_forecast_key():
-    Bucket = S3.Bucket(FORECAST_BUCKET)
-    prefix_objs = Bucket.objects.filter(Prefix="current/")
-    forecast_key = None
-    if prefix_objs:
-        for obj in prefix_objs:
-            key = obj.key
-            if not key.endswith('.json') and not key.endswith('.JSON'):
-                continue
-            else:
-                forecast_key = key
-    else:
-        raise NameError("No Current Forecast")
-    return forecast_key
+    try:
+        Bucket = S3.Bucket(FORECAST_BUCKET)
+        prefix_objs = Bucket.objects.filter(Prefix="current/")
+        forecast_key = None
+        if prefix_objs:
+            for obj in prefix_objs:
+                key = obj.key
+                if not key.endswith('.json') and not key.endswith('.JSON'):
+                    continue
+                else:
+                    forecast_key = key
+        else:
+            raise NameError("No Current Forecast")
+        return forecast_key
+    except Exception as e:
+        print(f'Exception: {e}')
+        return None
 
 def retrieve_forecast_data(objKey):
     # S3 Object
@@ -73,7 +77,12 @@ def calculate_bid_from_forecast(forecast, budget):
 def get_bid(budget):
     # Retrieve object key of current forecast
     forecastKey = get_forecast_key()
-
+    if not forecastKey:
+        # -2 is bidripper code for bucket/key error
+        Data = {"Bid" : -2}
+        Data = json.dumps(Data, indent=4, sort_keys=True)
+        print(f"Logging Data\n{Data}")
+        return jsonify(data=Data)
     # Retrieve contents of current forecast
     forecastData = retrieve_forecast_data(forecastKey)
 

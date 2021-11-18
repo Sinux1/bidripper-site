@@ -19,13 +19,15 @@ const Spot_Bids = () => {
         } else {
             var msg = ""
             const data = await API.get('bidripperapi', '/bid/' + budget)
-            console.log(data)
+
             var Data = JSON.parse(data.data);
-            if (parseFloat(data.Bid, 10) < 0){
-                msg = "Unfortunatly, BidRipper assumes that you are looking to provision a c4.8xlarge instance for at least 42 hours this week and\n"
+            if (parseFloat(Data.Bid, 10)  === -1){
+                msg = "Unfortunately, BidRipper assumes that you are looking to provision a c4.8xlarge instance for at least 42 hours this week and\n"
                 msg += "your budget does not meet this criteria.\n"
                 msg += "Please enter a larger budget, and BidRipper will attempt to generate a bid.\n"
                 msg += `The forecast suggests the spot price will remain under $${Data.max} this week`;
+            } else if (parseFloat(Data.Bid, 10)  === -2){
+                msg = "Bidripper is currently experiencing internal problems.\nPlease check back later."
             } else{
                 msg = `For the week beginning ${Data.WeekOf}\n`
                 msg += `BID: $${Data.Bid}\n`
@@ -35,8 +37,7 @@ const Spot_Bids = () => {
             }
 
             setProjectBid(msg)
-            console.log(data.data)
-            console.log(msg)
+
         }
         
       }
