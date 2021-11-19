@@ -45,7 +45,9 @@ const Spot_Bids = () => {
     return (
         <div className="spot-bids">
             <div className="spot-bid-header">
-                <h2>Get A Spot Bid</h2> 
+                <h2>Get A Spot Bid</h2>
+                <p>For Your c4.8xlarge Instance Type</p>
+                <p>In the us-west-2a Availability Zone!</p>
             </div>
             <form onSubmit={getBid}>
                 <label>Budget: </label>
