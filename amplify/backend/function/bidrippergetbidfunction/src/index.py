@@ -4,7 +4,7 @@ from flask_cors import CORS
 from flask import Flask, jsonify
 from os import environ, path
 import boto3
-
+from math import floor
 
 FORECAST_BUCKET = environ['FORECAST_BUCKET']
 S3 = boto3.resource('s3')
@@ -67,9 +67,10 @@ def calculate_bid_from_forecast(forecast, budget):
         total = c1
         time = 42
     else:
-        suggestion = -1
-        total = 0
-        time = 0
+        suggestion = fc["q1"]
+        time = floor(user_budget/suggestion)
+        total = time * suggestion
+        
 
     return format(suggestion, ',.4f'), total, time, max
 
@@ -92,14 +93,17 @@ def get_bid(budget):
     # First day of the week of the forecast
     weekOf = path.basename(forecastKey).split('.')[0]
     # Define dictionary of values in question and dump into Json object
-    Data = {"Bid": bid, "Cost": cost, "Runtime": runTime, "WeekOf": weekOf, "max": maxPrice}
+    Data = {"Bid": bid, 
+            "Cost": cost, 
+            "Runtime": runTime, 
+            "WeekOf": weekOf, 
+            "max": maxPrice}
     Data = json.dumps(Data, indent=4, sort_keys=True)
     
     # Log Data to Cloudwatch Logs
     print(f"Logging Data\n{Data}")
     
     return jsonify(data=Data)
-
 
 def handler(event, context):
     print(f'Log Event:\n{event}')
