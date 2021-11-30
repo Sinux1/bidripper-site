@@ -105,7 +105,7 @@ With the appropriate changes to __amplify/backend/function/bidrippergetbidfuncti
 Be aware that until the initial training from the bidripper-ml component is complete the site will return an error and suggest the user return later. 
 
 ## Diagrams
-How the BidRipper web application interacts with the NidRipper ML pipeline
+How the BidRipper web application interacts with the BidRipper ML pipeline
 ![image info](./images/front-back-data-flow.png)
 
 How data flows through the BidRipper Amplify application
