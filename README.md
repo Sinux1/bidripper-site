@@ -1,8 +1,7 @@
 # Bidripper Project : bidripper-site
 
-## About
 
-Description and Motivation will go here
+Get your weekly spot bid suggestion  [here](http://bid.hashripper.net)
 
 ## Build and Deploy 
 
@@ -104,3 +103,10 @@ With the appropriate changes to __amplify/backend/function/bidrippergetbidfuncti
 `amplify status` will display the changes to be made.  
 `amplify push -y` will push the application into the AWS cloud.  
 Be aware that until the initial training from the bidripper-ml component is complete the site will return an error and suggest the user return later. 
+
+## Diagrams
+How the BidRipper web application interacts with the NidRipper ML pipeline
+![image info](./images/front-back-data-flow.png)
+
+How data flows through the BidRipper Amplify application
+![image info](./images/react-site-diagram.png)
